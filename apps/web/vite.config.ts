@@ -7,14 +7,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@victoire/shared": fileURLToPath(
-        new URL("../../packages/shared/src/index.ts", import.meta.url),
+        new URL("./src/lib/shared.ts", import.meta.url),
       ),
       "@victoire/validation": fileURLToPath(
-        new URL("../../packages/validation/src/index.ts", import.meta.url),
+        new URL("./src/lib/validation.ts", import.meta.url),
       ),
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
   server: { port: 5173, host: true },
-  build: { target: "es2022", sourcemap: true },
+  build: { target: "es2022", sourcemap: false },
 });
